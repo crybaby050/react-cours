@@ -58,8 +58,14 @@ function Formulaire(){
         if (!form.condition) {
             nouvellesErreurs.condition = "Vous devez accepter les conditions";
         }
-
+        const valeurs = Object.values(nouvellesErreurs)
+        const resultat = valeurs.some(erreur => erreur !== "")
+        
         setErreurs(nouvellesErreurs)
+
+        if(resultat){return}
+
+
         
 
         setInscription(form)
